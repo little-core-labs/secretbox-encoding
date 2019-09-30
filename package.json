@@ -1,6 +1,6 @@
 {
   "name": "xsalsa20-poly1305-encoding",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "XSalsa20 Poly1305 codec that implements the abstract-encoding interface.",
   "main": "index.js",
   "scripts": {

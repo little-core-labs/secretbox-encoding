@@ -1,0 +1,33 @@
+{
+  "name": "xsalsa20-poly1305-encoding",
+  "version": "0.0.0",
+  "description": "XSalsa20 Poly1305 codec that implements the abstract-encoding interface.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "xsalsa20",
+    "poly1305",
+    "codec",
+    "abstract",
+    "encoding"
+  ],
+  "author": "Joseph Werle <joseph.werle@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "sodium-universal": "^2.0.0"
+  },
+  "devDependencies": {
+    "protocol-buffers": "^4.1.0",
+    "tape": "^4.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwerle/xsalsa20-poly1305-encoding.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jwerle/xsalsa20-poly1305-encoding/issues"
+  },
+  "homepage": "https://github.com/jwerle/xsalsa20-poly1305-encoding#readme"
+}

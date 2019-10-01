@@ -1,5 +1,5 @@
 {
-  "name": "xsalsa20-poly1305-encoding",
+  "name": "secretbox-encoding",
   "version": "0.1.0",
   "description": "XSalsa20 Poly1305 codec that implements the abstract-encoding interface.",
   "main": "index.js",
@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jwerle/xsalsa20-poly1305-encoding.git"
+    "url": "git+https://github.com/jwerle/secretbox-encoding.git"
   },
   "bugs": {
-    "url": "https://github.com/jwerle/xsalsa20-poly1305-encoding/issues"
+    "url": "https://github.com/jwerle/secretbox-encoding/issues"
   },
-  "homepage": "https://github.com/jwerle/xsalsa20-poly1305-encoding#readme"
+  "homepage": "https://github.com/jwerle/secretbox-encoding#readme"
 }

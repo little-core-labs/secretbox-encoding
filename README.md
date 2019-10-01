@@ -1,18 +1,18 @@
-xsalsa20-poly1305-encoding
-==========================
+secretbox-encoding
+==================
 
-> XSalsa20 Poly1305 codec that implements the abstract-encoding interface.
+> [XSalsa20 Poly1305][secretbox] codec that implements the [abstract-encoding][abstract-encoding] interface.
 
 ## Installation
 
 ```sh
-$ npm install xsalsa20-poly1305-encoding
+$ npm install secretbox-encoding
 ```
 
 ## Usage
 
 ```js
-const codec = require('xsalsa20-poly1305-encoding')(nonce, secretKey)
+const codec = require('secretbox-encoding')(nonce, secretKey)
 
 // encode a value
 buffer = codec.encode(value)
@@ -25,7 +25,7 @@ value = codec.decode(buffer)
 
 ```js
 const crypto = require('crypto')
-const Codec = require('xsalsa20-poly1305-encoding')
+const Codec = require('secretbox-encoding')
 
 const nonce = crypto.randomBytes(24)
 const key = crypto.randomBytes(32)
@@ -54,7 +54,7 @@ const message = codec.decode(encoded) // { data: 'hello world' }
 
 ## API
 
-### `codec = require('xsalsa20-poly1305-encoding')([nonce,] secretKey[, opts])`
+### `codec = require('secretbox-encoding')([nonce,] secretKey[, opts])`
 
 Create a codec object from a 24 byte `nonce` and 32 byte `secretKey`. If
 only a 32 byte `nonce` is given, it is treated as a `secretKey`.
@@ -103,3 +103,7 @@ const length = codec.encodingLength('hello world') // 11
 ## License
 
 MIT
+
+
+[abstract-encoding]: https://github.com/mafintosh/abstract-encoding
+[secretbox]: https://download.libsodium.org/doc/secret-key_cryptography/secretbox

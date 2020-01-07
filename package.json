@@ -4,7 +4,7 @@
   "description": "XSalsa20 Poly1305 codec that implements the abstract-encoding interface.",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "nyc tape test.js"
   },
   "keywords": [
     "xsalsa20",
@@ -19,6 +19,7 @@
     "sodium-universal": "^2.0.0"
   },
   "devDependencies": {
+    "nyc": "^15.0.0",
     "protocol-buffers": "^4.1.0",
     "tape": "^4.11.0"
   },

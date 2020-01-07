@@ -2,6 +2,7 @@ secretbox-encoding
 ==================
 
 > [XSalsa20 Poly1305][secretbox] codec that implements the [abstract-encoding][abstract-encoding] interface.
+> Nonces are generated randomly and prepended to the ciphertext.
 
 ## Installation
 
@@ -12,7 +13,7 @@ $ npm install secretbox-encoding
 ## Usage
 
 ```js
-const codec = require('secretbox-encoding')(nonce, secretKey)
+const codec = require('secretbox-encoding')(secretKey)
 
 // encode a value
 buffer = codec.encode(value)
@@ -27,10 +28,9 @@ value = codec.decode(buffer)
 const crypto = require('crypto')
 const Codec = require('secretbox-encoding')
 
-const nonce = crypto.randomBytes(24)
 const key = crypto.randomBytes(32)
 
-const codec = Codec(nonce, key)
+const codec = Codec(key)
 const hello = codec.encode('hello')
 const world = codec.encode('world')
 
@@ -47,25 +47,16 @@ message {
 }
 `)
 
-const codec = Codec(nonce, key, { valueEncoding: Message })
+const codec = Codec(key, { valueEncoding: Message })
 const encoded = codec.encode({ data: 'hello world' })
 const message = codec.decode(encoded) // { data: 'hello world' }
 ```
 
 ## API
 
-### `codec = require('secretbox-encoding')([nonce,] secretKey[, opts])`
+### `codec = require('secretbox-encoding')(secretKey[, opts])`
 
-Create a codec object from a 24 byte `nonce` and 32 byte `secretKey`. If
-only a 32 byte `nonce` is given, it is treated as a `secretKey`.
-
-```js
-const nonce = crypto.randomBytes(24)
-const key = crypto.randomBytes(32)
-const codec = Codec(nonce, key)
-```
-
-or
+Create a codec object from 32 byte `secretKey`.
 
 ```js
 const key = crypto.randomBytes(32)
